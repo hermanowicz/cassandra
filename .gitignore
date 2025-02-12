@@ -1,0 +1,6 @@
+*.tfstate
+.env
+*.crt
+*.priv
+*.pem
+.terraform
