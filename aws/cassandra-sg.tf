@@ -51,6 +51,13 @@ resource "aws_security_group" "cassandra-sg" {
     cidr_blocks = [module.vpc.vpc_cidr_block]
   }
 
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = [module.vpc.vpc_cidr_block]
+  }
+
 
   lifecycle {
     create_before_destroy = true
