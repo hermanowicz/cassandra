@@ -12,12 +12,13 @@ module "vpc" {
   intra_subnets        = ["10.0.33.0/24", "10.0.36.0/24", "10.0.39.0/24"]
   intra_subnet_names   = ["cache-a", "cache-b", "cache-c"]
   public_subnets       = ["10.0.203.0/24", "10.0.206.0/24", "10.0.209.0/24"]
+  public_subnet_names  = ["lbs-${var.region}a", "lbs-${var.region}b", "lbs-${var.region}c"]
 
   enable_nat_gateway     = true
   single_nat_gateway     = true
   one_nat_gateway_per_az = false
 
-  database_subnet_group_name         = "primary_db_subnet_group"
+  database_subnet_group_name         = "primary-db-subnet-group"
   create_database_subnet_group       = true
   create_database_subnet_route_table = true
 
