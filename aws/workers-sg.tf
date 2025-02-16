@@ -18,4 +18,11 @@ resource "aws_security_group" "workers" {
     ipv6_cidr_blocks = ["::/0"]
   }
 
+  tags = {
+    Name        = "labs-workers"
+    Environment = "sandbox"
+    Project     = "labs"
+    Terraform   = "true"
+  }
+
 }
